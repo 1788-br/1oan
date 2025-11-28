@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台灣專業貸款顧問｜快速審核・低利安心借貸</title>
+<meta name="description" content="台灣專業借貸顧問，快速審核，低利率，當日可撥款，手機即可申辦，歡迎加LINE：svip11122 或來電 0989087639">
+
+<style>
+body{
+  margin:0;
+  font-family: "Noto Sans TC", Arial, sans-serif;
+  background:#f8fafc;
+  color:#1f2937;
+}
+header{
+  background:linear-gradient(135deg,#1e3a8a,#2563eb);
+  color:white;
+  text-align:center;
+  padding:60px 20px;
+}
+header h1{margin:0;font-size:2.2rem;}
+header p{margin-top:10px;font-size:1.2rem;}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 28px;
+  background:#06c755;
+  color:#white;
+  color:#fff;
+  text-decoration:none;
+  border-radius:999px;
+  font-weight:bold;
+}
+
+section{
+  padding:50px 20px;
+  max-width:900px;
+  margin:auto;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.feature{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+form{
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+form input, form select, form button{
+  width:100%;
+  padding:14px;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:1rem;
+}
+form button{
+  background:#1e40af;
+  color:white;
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+footer{
+  text-align:center;
+  padding:30px 15px;
+  background:#1f2937;
+  color:white;
+  font-size:0.95rem;
+}
+
+/* LINE 浮動按鈕 */
+.line-float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#06c755;
+  color:#fff;
+  padding:12px 16px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  z-index:9999;
+}
+
+.call-float{
+  position:fixed;
+  right:20px;
+  bottom:80px;
+  background:#1e40af;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+  z-index:9999;
+}
+
+/* 手機底部列 */
+.mobile-bar{
+  display:none;
+}
+@media (max-width:768px){
+  .mobile-bar{
+    display:flex;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    background:#fff;
+    border-top:1px solid #e5e7eb;
+    z-index:9999;
+  }
+  .mobile-bar a{
+    flex:1;
+    text-align:center;
+    padding:14px 0;
+    text-decoration:none;
+    font-weight:bold;
+  }
+  .mobile-bar a:first-child{background:#1e40af;color:white;}
+  .mobile-bar a:last-child{background:#06c755;color:white;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>台灣專業貸款顧問</h1>
+  <p>快速審核｜低利安心｜手機申辦｜當日可撥款</p >
+  <a href=" " target="_blank" class="btn">加入 LINE 免費諮詢</a >
+</header>
+
+<section>
+  <h2>我們的優勢</h2>
+  <div class="features">
+    <div class="feature">✅ 低利專案，量身訂做還款方案</div>
+    <div class="feature">✅ 無需聯徵過件率高</div>
+    <div class="feature">✅ 當日最快核准放款</div>
+    <div class="feature">✅ 全台皆可服務</div>
+  </div>
+</section>
+
+<section>
+  <h2>立即申請貸款</h2>
+  <form onsubmit="sendToLINE()" id="loanForm">
+    <input type="text" id="name" placeholder="姓名" required>
+    <input type="tel" id="phone" placeholder="聯絡電話" required>
+    <select id="type">
+      <option>個人信用貸款</option>
+      <option>汽車貸款</option>
+      <option>機車貸款</option>
+      <option>小額週轉金</option>
+    </select>
+    <input type="number" id="amount" placeholder="需求金額 (例如 10萬)">
+    <button type="submit">送出諮詢</button>
+  </form>
+</section>
+
+<footer>
+  安心借貸顧問諮詢<br>
+  聯絡電話：0989-087-639 ｜ LINE ID：svip11122<br>
+  服務時間：週一至週五 09:00 - 18:00<br><br>
+  本網站僅提供資訊與媒合，不構成實際放款保證
+</footer>
+
+<!-- LINE 浮動按鈕 -->
+<a href="https://line.me/ti/p/svip11122" target="_blank" class="line-float">
+  💬 LINE 諮詢
+</a >
+
+<!-- 電話浮動按鈕 -->
+<a href="tel:0989087639" class="call-float">
+  📞 立即來電
+</a >
+
+<!-- 手機底部 -->
+<div class="mobile-bar">
+  <a href="tel:0989087639">📞 立即來電</a >
+  <a href="https://line.me/ti/p/svip11122" target="_blank">💬 LINE 諮詢</a >
+</div>
+
+<script>
+function sendToLINE(){
+  event.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let type = document.getElementById("type").value;
+  let amount = document.getElementById("amount").value;
+
+  let msg = `您好，我想申請貸款：%0A姓名：${name}%0A電話：${phone}%0A類型：${type}%0A金額：${amount}`;
+
+  window.open(`https://line.me/ti/p/svip11122?text=${msg}`, "_blank");
+}
+</script>
+
+</body>
+</html>
