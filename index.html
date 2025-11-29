@@ -27,11 +27,11 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    /* ------------ HERO 區塊修正版（完整顯示圖片） ------------ */
+    /* ------------ HERO 區塊：優化、刪除文字版 ------------ */
     .hero-wrapper {
         position: relative;
         width: 100%;
-        background: #1e3a8a; /* 避免圖片比例不同出現白邊 */
+        background: #1e3a8a;
         text-align: center;
     }
 
@@ -39,30 +39,17 @@
         width: 100%;
         height: auto;
         display: block;
-        object-fit: contain; /* ← 不裁切，完整顯示圖片 */
+        object-fit: contain;
     }
 
+    /* HERO 按鈕置於圖片下方 */
     .hero-content {
         position: absolute;
-        top: 50%;
+        bottom: 40px;
         left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
+        transform: translateX(-50%);
         text-align: center;
-        max-width: 800px;
-        padding: 20px;
-        text-shadow: 0 2px 6px rgba(0,0,0,0.5);
-    }
-
-    .hero-content h2 {
-        font-size: 42px;
-        font-weight: 700;
-        margin-bottom: 20px;
-    }
-
-    .hero-content p {
-        font-size: 20px;
-        margin-bottom: 30px;
+        padding: 10px;
     }
 
     .btn-main {
@@ -83,15 +70,16 @@
     }
 
     @media(max-width: 768px) {
-        .hero-content h2 { font-size: 28px; }
-        .hero-content p { font-size: 16px; }
         .btn-main {
             font-size: 16px;
             padding: 12px 22px;
         }
+        .hero-content {
+            bottom: 25px;
+        }
     }
 
-    /* ------------------- 其他區域保留原本設定 ------------------- */
+    /* ------------------- 其他區域保留 ------------------- */
 
     section {
         padding: 60px 20px;
@@ -99,6 +87,7 @@
         margin: auto;
         margin-bottom: 40px;
     }
+
     h3 {
         font-size: 26px;
         color: #1e3a8a;
@@ -119,6 +108,7 @@
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 20px;
     }
+
     .card {
         background: #f7f9fc;
         border-radius: 14px;
@@ -127,10 +117,12 @@
         box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         transition: 0.3s;
     }
+
     .card:hover {
         transform: translateY(-5px);
         box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     }
+
     .card h4 {
         margin-bottom: 12px;
         color: #1e3a8a;
@@ -145,16 +137,19 @@
         box-shadow: 0 3px 10px rgba(0,0,0,0.06);
         transition: 0.3s;
     }
+
     .faq-item:hover {
         transform: scale(1.02);
         box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     }
+
     .faq-content {
         display: none;
         padding-top: 10px;
         color: #333;
         font-size: 16px;
     }
+
     .faq-item.active .faq-content {
         display: block;
     }
@@ -176,6 +171,7 @@
         z-index: 9999;
         padding-bottom: env(safe-area-inset-bottom);
     }
+
     .bottom-buttons .btn {
         padding: 14px 25px;
         border-radius: 12px;
@@ -188,6 +184,7 @@
         text-align: center;
         transition: 0.3s;
     }
+
     .bottom-buttons .line { background: linear-gradient(135deg, #00c300, #00ff70); }
     .bottom-buttons .call { background: linear-gradient(135deg, #1e3a8a, #3f60c1); }
 </style>
@@ -197,15 +194,90 @@
 
 <header>萬通租賃</header>
 
-<!-- HERO IMAGE 完整顯示 -->
+<!-- HERO：圖片完整顯示 + 已刪除文字 -->
 <div class="hero-wrapper">
     <img src="hero-bg.jpg" alt="首頁背景" class="hero-img">
+
     <div class="hero-content">
-        <h2>快速、安全、保密的專業借貸服務</h2>
-        <p>信用借貸｜房屋借貸｜汽車借貸｜黃金借貸</p>
-        <a href="https://line.me/ti/p/vvv178" target="_blank" class="btn-main">立即 LINE 詢問</a>
+        <a href="https://line.me/ti/p/vvv178" target="_blank" class="btn-main">
+            立即 LINE 詢問
+        </a>
     </div>
 </div>
 
-<!-- 其他部分保留原樣 -->
-...
+<!-- 服務項目 -->
+<section class="services">
+    <h3>服務項目</h3>
+    <div class="card-container">
+        <div class="card"><h4>信用借貸</h4><p>門檻低、撥款快，薪轉／勞保皆可申請。</p></div>
+        <div class="card"><h4>房屋借貸</h4><p>不限屋齡／坪數，無塵封即可貸。</p></div>
+        <div class="card"><h4>汽車借貸</h4><p>汽機車皆可借，不限年份、可免留車。</p></div>
+        <div class="card"><h4>黃金借貸</h4><p>依金價估值，手續簡單，現金快速到位。</p></div>
+    </div>
+</section>
+
+<!-- 利率說明 -->
+<section class="rates">
+    <h3>利率與費用說明</h3>
+    <div class="card">
+        <p>1. 還款期限：最低 3 個月，最長 60 個月（以月計算）</p>
+        <p>2. 利率依當舖法規定，年利率不得高於 30%（月利率 1%～2.5%）</p>
+        <p>3. 無任何代辦手續費。</p>
+        <p><b>範例：</b><br>年利率 12% → 月息 1% → 每萬元每月利息 100 元。<br>
+        借款 10 萬元×12 個月，共需清償：112,000 元。</p>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+    <h3>常見問題（FAQ）</h3>
+
+    <div class="faq-item">
+        <h4>申請條件是什麼？</h4>
+        <div class="faq-content">年滿 20 歲即可申請，需提供基本身分資料。</div>
+    </div>
+
+    <div class="faq-item">
+        <h4>多久可以撥款？</h4>
+        <div class="faq-content">審核最快 10 分鐘，資料完整當日即可撥款。</div>
+    </div>
+
+    <div class="faq-item">
+        <h4>會影響信用嗎？</h4>
+        <div class="faq-content">按時繳款不會影響信用，反而有助信用提升。</div>
+    </div>
+
+    <div class="faq-item">
+        <h4>是否收取代辦費？</h4>
+        <div class="faq-content">全程不收任何代辦費、審核費、前期費用。</div>
+    </div>
+</section>
+
+<!-- 關於我們 -->
+<section class="about">
+    <h3>關於我們</h3>
+    <p>公司名稱：萬通租賃有限公司</p>
+    <p>公司地址：嘉義縣六腳鄉蘇厝村蘇厝寮150-5號1樓</p>
+    <p>服務專線：<a href="tel:09123456789">0912-345-6789</a></p>
+    <p>LINE 聯絡：<a href="https://line.me/ti/p/vvv178" target="_blank">立即聯絡</a></p>
+</section>
+
+<footer>
+    萬通租賃｜專業借貸顧問服務<br>本網站提供金融資訊，無代辦費｜保密處理
+</footer>
+
+<div class="bottom-buttons">
+    <a class="btn line" href="https://line.me/ti/p/vvv178" target="_blank">💬 LINE 聯絡</a>
+    <a class="btn call" href="tel:09123456789">📞 立即來電</a>
+</div>
+
+<script>
+    document.querySelectorAll(".faq-item").forEach(item => {
+        item.addEventListener("click", () => {
+            item.classList.toggle("active");
+        });
+    });
+</script>
+
+</body>
+</html>
