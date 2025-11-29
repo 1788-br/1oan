@@ -14,6 +14,7 @@
         line-height: 1.8;
     }
 
+    /* Header */
     header {
         background: white;
         padding: 20px 40px;
@@ -132,7 +133,6 @@
         gap: 15px;
         z-index: 9999;
     }
-
     .bottom-buttons .btn {
         display: flex;
         align-items: center;
@@ -148,28 +148,38 @@
         min-width: 150px;
         text-align: center;
     }
-
     .bottom-buttons .btn.line {
         background: linear-gradient(135deg, #00c300, #00ff70);
     }
-
     .bottom-buttons .btn.call {
         background: linear-gradient(135deg, #1e3a8a, #3f60c1);
     }
-
     .bottom-buttons .btn:hover {
         transform: scale(1.05);
         opacity: 0.9;
     }
 
-    /* 手機版仍保持水平排列 */
+    /* 手機版 header 與浮動按鈕調整 */
     @media(max-width: 500px) {
+        header {
+            flex-direction: column; /* 標題與聯絡方式垂直排列 */
+            align-items: flex-start;
+            padding: 15px 20px;
+        }
+        header .contact {
+            margin-top: 10px;
+        }
+        header .contact a {
+            margin-left: 0;
+            margin-right: 15px;
+            font-size: 16px;
+        }
         .bottom-buttons {
             flex-direction: row; /* 保持水平排列 */
             bottom: 15px;
         }
         .bottom-buttons .btn {
-            width: 140px; /* 手機版適度縮小 */
+            width: 140px; /* 手機版按鈕稍小 */
         }
     }
 </style>
