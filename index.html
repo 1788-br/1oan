@@ -27,53 +27,45 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    /* === HERO 區塊（已整合＋可正常顯示圖片） === */
+    /* ------------ HERO 區塊（整合後） ------------ */
     .hero {
         position: relative;
-        height: 100vh; /* 全螢幕 */
-        padding: 0 20px;
+        padding: 120px 20px;
         text-align: center;
-
-        background: url('images/hero-bg.jpg') center center / cover no-repeat;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
+        background: url('hero-bg.jpg') no-repeat center center;
+        background-size: cover;
         color: white;
     }
-
-    .hero::after {
+    .hero::before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.35); /* 遮罩讓文字清楚 */
+        background: rgba(0, 20, 80, 0.55);  /* 深藍透明遮罩 */
         z-index: 1;
     }
-
     .hero h2,
     .hero p,
     .hero .btn-main {
         position: relative;
-        z-index: 2; /* 確保在遮罩上方 */
+        z-index: 2;
     }
 
-    .hero h2 {
-        font-size: 42px;
-        color: #fff;
-        margin-bottom: 20px;
-        font-weight: 700;
+    @media(max-width: 600px) {
+        .hero {
+            padding: 90px 15px;
+            background-position: center top;
+        }
+        .hero h2 {
+            font-size: 26px;
+        }
+        .hero p {
+            font-size: 16px;
+        }
     }
-
-    .hero p {
-        font-size: 22px;
-        color: #f1f1f1;
-        margin-bottom: 30px;
-    }
+    /* ------------ END HERO ------------ */
 
     .btn-main {
         display: inline-block;
@@ -214,14 +206,12 @@
 
 <header>萬通租賃</header>
 
-<!-- HERO 開頭背景 -->
 <div class="hero">
     <h2>快速、安全、保密的專業借貸服務</h2>
     <p>信用借貸｜房屋借貸｜汽車借貸｜黃金借貸</p>
     <a href="https://line.me/ti/p/vvv178" target="_blank" class="btn-main">立即 LINE 詢問</a>
 </div>
 
-<!-- 服務項目 -->
 <section class="services">
     <h3>服務項目</h3>
     <div class="card-container">
@@ -244,40 +234,38 @@
     </div>
 </section>
 
-<!-- 利率 -->
 <section class="rates">
     <h3>利率與費用說明</h3>
     <div class="card">
         <p>1. 還款期限：最低 3 個月，最長 60 個月（以月計算）</p>
-        <p>2. 年利率不得高於 30%（月利率 1%～2.5%）</p>
+        <p>2. 利率依當舖法規定，年利率不得高於 30%（月利率 1%～2.5%）</p>
         <p>3. 無任何代辦手續費。</p>
         <p><b>範例：</b><br>
-        借款 10 萬元 × 12 個月 → 112,000 元。</p>
+        年利率 12% → 月息 1% → 每萬元每月利息 100 元。<br>
+        借款 10 萬元×12 個月，共需清償：112,000 元。</p>
     </div>
 </section>
 
-<!-- FAQ -->
 <section class="faq">
     <h3>常見問題（FAQ）</h3>
     <div class="faq-item">
         <h4>申請條件是什麼？</h4>
-        <div class="faq-content">年滿 20 歲即可申請，依方案需提供身分資料與相關證明文件。</div>
+        <div class="faq-content">年滿 20 歲即可申請，需提供基本身分資料，視貸款項目不同可能需要其他文件。</div>
     </div>
     <div class="faq-item">
         <h4>多久可以撥款？</h4>
-        <div class="faq-content">最快 10 分鐘審核，資料完整當日撥款。</div>
+        <div class="faq-content">審核最快 10 分鐘，資料完整當日即可撥款。</div>
     </div>
     <div class="faq-item">
         <h4>會影響信用嗎？</h4>
-        <div class="faq-content">按時繳款不會影響信用。</div>
+        <div class="faq-content">按時繳款不會影響信用，反而有助信用評等提升。</div>
     </div>
     <div class="faq-item">
         <h4>是否收取代辦費？</h4>
-        <div class="faq-content">不收代辦費、審核費、前期費用。</div>
+        <div class="faq-content">全程不收任何代辦費、審核費、前期費用，透明公開。</div>
     </div>
 </section>
 
-<!-- 關於我們 -->
 <section class="about contact-section">
     <h3>關於我們</h3>
     <p>公司名稱：萬通租賃有限公司</p>
@@ -291,7 +279,6 @@
     本網站提供金融資訊，無代辦費｜保密處理
 </footer>
 
-<!-- 底部按鈕 -->
 <div class="bottom-buttons">
     <a class="btn line" href="https://line.me/ti/p/vvv178" target="_blank">💬 LINE 聯絡</a>
     <a class="btn call" href="tel:09123456789">📞 立即來電</a>
@@ -301,7 +288,8 @@
     document.querySelectorAll(".faq-item").forEach(item => {
         item.addEventListener("click", () => {
             const content = item.querySelector(".faq-content");
-            content.style.display = (content.style.display === "block") ? "none" : "block";
+            content.style.display =
+              content.style.display === "block" ? "none" : "block";
         });
     });
 </script>
