@@ -9,35 +9,29 @@
     body {
         font-family: "Noto Sans TC", sans-serif;
         margin: 0;
-        background: #f7f9fc;
+        background: #f4f6f9;
         color: #1a1a1a;
         line-height: 1.8;
     }
 
-    /* Header */
     header {
-        background: white;
-        padding: 20px 40px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        background: #1e3a8a;
+        color: white;
+        padding: 15px 20px;
+        text-align: center;
         position: sticky;
         top: 0;
         z-index: 999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    header h1 {
-        margin: 0;
         font-size: 26px;
-        color: #1e3a8a;
         font-weight: 700;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    /* Hero */
     .hero {
-        padding: 80px 20px;
+        padding: 60px 20px;
         text-align: center;
         background: linear-gradient(to bottom right, #ffffff, #e7edf9);
+        border-bottom: 6px solid #d4a853;
     }
     .hero h2 {
         font-size: 32px;
@@ -58,49 +52,74 @@
         margin-top: 20px;
         text-decoration: none;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: 0.3s;
+    }
+    .btn-main:hover {
+        transform: scale(1.05);
+        background: #3751b3;
     }
 
     section {
         padding: 60px 20px;
         max-width: 1000px;
         margin: auto;
+        margin-bottom: 40px;
     }
     h3 {
         font-size: 26px;
         color: #1e3a8a;
-        border-left: 6px solid #d4a853;
-        padding-left: 12px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    /* 區塊背景色與圓角區分 */
+    .services, .rates, .faq, .about {
+        background: white;
+        border-radius: 16px;
+        padding: 40px 20px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
         margin-bottom: 30px;
     }
 
+    /* 服務項目 */
     .card-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 20px;
     }
     .card {
-        background: white;
-        padding: 20px;
+        background: #f7f9fc;
         border-radius: 14px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        transition: 0.3s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     }
     .card h4 {
-        margin: 0 0 10px;
-        font-size: 20px;
+        margin-bottom: 12px;
         color: #1e3a8a;
     }
 
+    /* FAQ */
     .faq-item {
-        background: white;
-        padding: 18px;
+        background: #f7f9fc;
         border-radius: 12px;
+        padding: 18px;
         margin-bottom: 16px;
         cursor: pointer;
         box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+        transition: 0.3s;
+    }
+    .faq-item:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     }
     .faq-item h4 {
         margin: 0;
-        font-size: 18px;
         color: #1e3a8a;
     }
     .faq-content {
@@ -110,23 +129,15 @@
         font-size: 16px;
     }
 
-    /* 聯繫我們 / 關於我們區塊 */
-    .contact-section {
-        background: #ffffff;
-        padding: 40px 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        text-align: center;
-        margin-bottom: 40px;
-    }
+    /* 關於我們 */
     .contact-section p {
         font-size: 18px;
-        margin: 8px 0;
+        margin: 10px 0;
     }
     .contact-section a {
         color: #1e3a8a;
-        text-decoration: none;
         font-weight: 700;
+        text-decoration: none;
     }
 
     footer {
@@ -134,10 +145,9 @@
         color: white;
         padding: 25px;
         text-align: center;
-        margin-top: 40px;
     }
 
-    /* 底部長方形浮動按鈕 - 水平排列 + 動畫 */
+    /* 底部浮動按鈕 */
     .bottom-buttons {
         position: fixed;
         bottom: 20px;
@@ -146,16 +156,8 @@
         display: flex;
         gap: 15px;
         z-index: 9999;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    .bottom-buttons.hide {
-        transform: translateX(-50%) translateY(100%);
-        opacity: 0;
     }
     .bottom-buttons .btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         padding: 14px 25px;
         border-radius: 12px;
         font-size: 18px;
@@ -163,41 +165,26 @@
         color: white;
         text-decoration: none;
         box-shadow: 0 6px 15px rgba(0,0,0,0.35);
-        transition: all 0.3s ease;
         min-width: 150px;
         text-align: center;
-    }
-    .bottom-buttons .btn.line {
-        background: linear-gradient(135deg, #00c300, #00ff70);
-    }
-    .bottom-buttons .btn.call {
-        background: linear-gradient(135deg, #1e3a8a, #3f60c1);
+        transition: 0.3s;
     }
     .bottom-buttons .btn:hover {
         transform: scale(1.05);
         opacity: 0.9;
     }
+    .bottom-buttons .line { background: linear-gradient(135deg, #00c300, #00ff70); }
+    .bottom-buttons .call { background: linear-gradient(135deg, #1e3a8a, #3f60c1); }
 
     @media(max-width: 500px) {
-        header {
-            padding: 15px 20px;
-        }
-        .bottom-buttons {
-            flex-direction: row;
-            bottom: 15px;
-        }
-        .bottom-buttons .btn {
-            width: 140px;
-        }
+        .bottom-buttons .btn { width: 140px; }
     }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>萬通租賃</h1>
-</header>
+<header>萬通租賃</header>
 
 <div class="hero">
     <h2>快速、安全、保密的專業借貸服務</h2>
@@ -205,7 +192,8 @@
     <a href="https://line.me/ti/p/vvv178" target="_blank" class="btn-main">立即 LINE 詢問</a>
 </div>
 
-<section>
+<!-- 服務項目 -->
+<section class="services">
     <h3>服務項目</h3>
     <div class="card-container">
         <div class="card">
@@ -227,7 +215,8 @@
     </div>
 </section>
 
-<section>
+<!-- 利率與費用 -->
+<section class="rates">
     <h3>利率與費用說明</h3>
     <div class="card">
         <p>1. 還款期限：最低 3 個月，最長 60 個月（以月計算）</p>
@@ -239,36 +228,29 @@
     </div>
 </section>
 
-<section>
+<!-- 常見問題 -->
+<section class="faq">
     <h3>常見問題（FAQ）</h3>
     <div class="faq-item">
         <h4>申請條件是什麼？</h4>
-        <div class="faq-content">
-            年滿 20 歲即可申請，需提供基本身分資料，視貸款項目不同可能需要其他文件。
-        </div>
+        <div class="faq-content">年滿 20 歲即可申請，需提供基本身分資料，視貸款項目不同可能需要其他文件。</div>
     </div>
     <div class="faq-item">
         <h4>多久可以撥款？</h4>
-        <div class="faq-content">
-            審核最快 10 分鐘，資料完整當日即可撥款。
-        </div>
+        <div class="faq-content">審核最快 10 分鐘，資料完整當日即可撥款。</div>
     </div>
     <div class="faq-item">
         <h4>會影響信用嗎？</h4>
-        <div class="faq-content">
-            按時繳款不會影響信用，反而有助信用評等提升。
-        </div>
+        <div class="faq-content">按時繳款不會影響信用，反而有助信用評等提升。</div>
     </div>
     <div class="faq-item">
         <h4>是否收取代辦費？</h4>
-        <div class="faq-content">
-            全程不收任何代辦費、審核費、前期費用，透明公開。
-        </div>
+        <div class="faq-content">全程不收任何代辦費、審核費、前期費用，透明公開。</div>
     </div>
 </section>
 
-<!-- 關於我們 / 聯繫我們區塊 -->
-<section class="contact-section" id="contact">
+<!-- 關於我們 -->
+<section class="about contact-section">
     <h3>關於我們</h3>
     <p>公司名稱：萬通租賃有限公司</p>
     <p>公司地址：嘉義縣六腳鄉蘇厝村蘇厝寮150-5號1樓</p>
@@ -281,7 +263,8 @@
     本網站提供金融資訊，無代辦費｜保密處理
 </footer>
 
-<div class="bottom-buttons" id="bottomButtons">
+<!-- 底部浮動按鈕 -->
+<div class="bottom-buttons">
     <a class="btn line" href="https://line.me/ti/p/vvv178" target="_blank">💬 LINE 聯絡</a>
     <a class="btn call" href="tel:09123456789">📞 立即來電</a>
 </div>
@@ -293,19 +276,6 @@
             const content = item.querySelector(".faq-content");
             content.style.display = (content.style.display === "block") ? "none" : "block";
         });
-    });
-
-    // 滑動隱藏/顯示底部按鈕
-    let lastScroll = 0;
-    const bottomButtons = document.getElementById('bottomButtons');
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        if(currentScroll > lastScroll){
-            bottomButtons.classList.add('hide');
-        } else {
-            bottomButtons.classList.remove('hide');
-        }
-        lastScroll = currentScroll <= 0 ? 0 : currentScroll;
     });
 </script>
 
