@@ -17,13 +17,13 @@
     /* Header */
     header {
         background: white;
-        padding: 20px 40px;
+        padding: 15px 20px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         position: sticky;
         top: 0;
         z-index: 999;
         display: flex;
-        justify-content: center; /* 居中顯示 */
+        justify-content: space-between;
         align-items: center;
     }
     header h1 {
@@ -33,6 +33,53 @@
         font-weight: 700;
     }
 
+    /* 漢堡選單 */
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .menu-toggle span {
+        display: block;
+        height: 3px;
+        background: #1e3a8a;
+        border-radius: 2px;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background: #1e3a8a;
+        color: white;
+        padding: 60px 20px;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    nav ul li {
+        margin-bottom: 20px;
+    }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        display: block;
+    }
+    nav.show {
+        left: 0;
+    }
+
+    /* Hero */
     .hero {
         padding: 80px 20px;
         text-align: center;
@@ -158,17 +205,10 @@
         opacity: 0.9;
     }
 
-    /* 手機版 header 與浮動按鈕調整 */
-    @media(max-width: 500px) {
-        header {
-            padding: 15px 20px;
-        }
-        .bottom-buttons {
-            flex-direction: row;
-            bottom: 15px;
-        }
-        .bottom-buttons .btn {
-            width: 140px;
+    /* 手機版調整 */
+    @media(max-width: 768px) {
+        .menu-toggle {
+            display: flex;
         }
     }
 </style>
@@ -177,8 +217,23 @@
 <body>
 
 <header>
+    <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <h1>萬通租賃</h1>
 </header>
+
+<nav id="sideMenu">
+    <ul>
+        <li><a href="#service">信用借貸</a></li>
+        <li><a href="#service">房屋借貸</a></li>
+        <li><a href="#service">汽車借貸</a></li>
+        <li><a href="#service">黃金借貸</a></li>
+        <li><a href="#contact">聯繫我們</a></li>
+    </ul>
+</nav>
 
 <div class="hero">
     <h2>快速、安全、保密的專業借貸服務</h2>
@@ -186,7 +241,7 @@
     <a href="https://line.me/ti/p/vvv178" target="_blank" class="btn-main">立即 LINE 詢問</a>
 </div>
 
-<section>
+<section id="service">
     <h3>服務項目</h3>
     <div class="card-container">
         <div class="card">
@@ -248,12 +303,17 @@
     </div>
 </section>
 
+<section id="contact">
+    <h3>聯繫我們</h3>
+    <p>📞 電話: 0901-270-389</p>
+    <p>💬 LINE: <a href="https://line.me/ti/p/vvv178" target="_blank">立即聯絡</a></p>
+</section>
+
 <footer>
     萬通租賃｜專業借貸顧問服務<br>
     本網站提供金融資訊，無代辦費｜保密處理
 </footer>
 
-<!-- 底部長方形浮動按鈕（水平排列 + 滑動動畫） -->
 <div class="bottom-buttons" id="bottomButtons">
     <a class="btn line" href="https://line.me/ti/p/vvv178" target="_blank">💬 LINE 聯絡</a>
     <a class="btn call" href="tel:0901270389">📞 立即來電</a>
@@ -266,6 +326,13 @@
             const content = item.querySelector(".faq-content");
             content.style.display = (content.style.display === "block") ? "none" : "block";
         });
+    });
+
+    // 漢堡選單切換
+    const menuToggle = document.getElementById('menuToggle');
+    const sideMenu = document.getElementById('sideMenu');
+    menuToggle.addEventListener('click', () => {
+        sideMenu.classList.toggle('show');
     });
 
     // 滑動隱藏/顯示底部按鈕
