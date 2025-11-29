@@ -162,14 +162,14 @@
         opacity: 0.9;
     }
 
-    /* 手機版自適應 */
+    /* 手機版仍保持水平排列 */
     @media(max-width: 500px) {
         .bottom-buttons {
-            flex-direction: column;
+            flex-direction: row; /* 保持水平排列 */
             bottom: 15px;
         }
         .bottom-buttons .btn {
-            width: 200px;
+            width: 140px; /* 手機版適度縮小 */
         }
     }
 </style>
