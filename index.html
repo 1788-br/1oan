@@ -1,240 +1,243 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>安心借貸顧問｜快速審核 · 低利安心</title>
-  <meta name="description" content="台灣專業貸款顧問，免費諮詢、合法媒合、量身方案。加入LINE svip11122 或來電 0989-087-639。">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>萬通租賃｜專業借貸服務</title>
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#fbfdff;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --primary:#1e3a8a; /* 深藍 */
-      --accent:#d4a853;  /* 金色 */
-      --accent-2:#06c755; /* LINE 綠 */
-      --radius:12px;
-      --maxw:1100px;
-      --glass: rgba(30,58,138,0.06);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter, "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color:#0f1724;
-      background:linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.6;
-    }
-    a{color:inherit}
-
-    /* layout */
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
-    header{background:transparent}
-    .topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-    .brand{display:flex;gap:14px;align-items:center}
-    .logo{
-      width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--primary),#2563eb);
-      color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;
-      box-shadow:0 8px 30px rgba(30,58,138,0.08)
-    }
-    .brand h1{margin:0;font-size:1.1rem}
-    nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0;align-items:center}
-    nav a{color:var(--primary);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
-    nav a:hover{background:var(--glass)}
-
-    /* sticky nav */
-    .sticky{position:sticky;top:0;background:#fff;z-index:90;border-bottom:1px solid #eef2f6;backdrop-filter:blur(6px)}
-
-    /* hero */
-    .hero{
-      display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:48px 0 26px 0;
-    }
-    .eyebrow{display:inline-block;color:var(--primary);font-weight:700;padding:6px 10px;border-radius:999px;background:linear-gradient(180deg,rgba(30,58,138,0.04),transparent)}
-    h2{font-size:2rem;margin:12px 0 10px 0;color:var(--primary)}
-    p.lead{color:var(--muted);margin:0 0 18px 0}
-
-    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{
-      padding:12px 18px;border-radius:10px;border:0;background:var(--primary);color:white;font-weight:700;text-decoration:none;
-      box-shadow:0 10px 30px rgba(30,58,138,0.08)
-    }
-    .btn.ghost{background:transparent;border:1px solid #e6eefb;color:var(--primary)}
-    .small-muted{color:var(--muted);font-size:0.95rem}
-
-    /* hero card */
-    .hero-card{
-      background:linear-gradient(180deg, white, #fbfdff);border-radius:14px;padding:18px;border:1px solid #f1f5f9;
-      box-shadow:0 20px 50px rgba(12,34,68,0.05)
-    }
-    .quick-list li{margin:6px 0;color:var(--muted)}
-
-    /* sections */
-    section{padding:36px 0}
-    .section-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:18px}
-    .section-head h3{margin:0;color:var(--primary)}
-    .muted{color:var(--muted)}
-
-    /* feature grid */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-
-    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid #eef2f6;box-shadow:0 8px 30px rgba(12,34,68,0.03)}
-
-    /* rates table */
-    table{width:100%;border-collapse:collapse}
-    th,td{padding:12px;border-bottom:1px solid #f1f5f9;text-align:left}
-    th{background:linear-gradient(90deg,#fff,#fbfdff);color:var(--primary);font-weight:700}
-
-    /* calculator */
-    .calc-grid{display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
-    .input{width:100%;padding:12px;border-radius:8px;border:1px solid #e6eef6;margin-bottom:12px;font-size:1rem}
-    .result{background:linear-gradient(180deg,#fff,#fbfdff);padding:16px;border-radius:10px;border:1px solid #eef2f6}
-
-    /* testimonial carousel */
-    .carousel{position:relative;overflow:hidden;border-radius:12px}
-    .slides{display:flex;transition:transform .6s ease}
-    .slide{min-width:100%;padding:22px;box-sizing:border-box;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid #eef2f6}
-    .carousel-controls{display:flex;gap:8px;justify-content:center;margin-top:12px}
-    .dot{width:10px;height:10px;border-radius:50%;background:#e6eef6;cursor:pointer}
-    .dot.active{background:var(--primary)}
-
-    /* FAQ */
-    .faq .item{border-radius:10px;padding:12px;border:1px solid #f1f5f9;background:var(--card);margin-bottom:10px}
-    .question{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700}
-    .answer{display:none;color:var(--muted);padding-top:8px}
-
-    /* popup */
-    .popup{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.45);z-index:2000}
-    .popup.show{display:flex}
-    .popup-card{background:white;padding:20px;border-radius:12px;max-width:420px;width:92%;text-align:center;border:1px solid #eef2f6}
-
-    /* footer */
-    footer{padding:28px 0;color:var(--muted);text-align:center;font-size:0.95rem}
-
-    /* float buttons */
-    .line-float{position:fixed;right:18px;bottom:18px;background:var(--accent-2);color:white;padding:12px 14px;border-radius:999px;display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;z-index:9999}
-    .call-float{position:fixed;right:18px;bottom:78px;background:var(--primary);color:white;padding:12px 14px;border-radius:999px;text-decoration:none;font-weight:700;z-index:9999}
-
-    /* mobile bottom bar */
-    .mobile-bar{display:none}
-    @media (max-width:920px){
-      nav ul{display:none}
-      .hero{grid-template-columns:1fr;gap:20px}
-      .calc-grid{grid-template-columns:1fr}
-      .mobile-bar{display:flex;position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #eef2f6;z-index:9999}
-      .mobile-bar a{flex:1;text-align:center;padding:12px 0;text-decoration:none;font-weight:700}
-      .mobile-bar a:first-child{background:var(--primary);color:white}
-      .mobile-bar a:last-child{background:var(--accent-2);color:white}
+<style>
+    body {
+        font-family: "Noto Sans TC", sans-serif;
+        margin: 0;
+        background: #f7f9fc;
+        color: #1a1a1a;
+        line-height: 1.8;
     }
 
-    /* small focus */
-    a:focus,button:focus,input:focus{outline:3px solid rgba(30,58,138,0.08);outline-offset:2px}
-  </style>
+    header {
+        background: white;
+        padding: 20px 40px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 26px;
+        color: #1e3a8a;
+        font-weight: 700;
+    }
+    header .contact a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #1e3a8a;
+        font-weight: 600;
+    }
+
+    .hero {
+        padding: 80px 20px;
+        text-align: center;
+        background: linear-gradient(to bottom right, #ffffff, #e7edf9);
+    }
+    .hero h2 {
+        font-size: 32px;
+        color: #1e3a8a;
+        font-weight: 700;
+    }
+    .hero p {
+        font-size: 18px;
+        color: #555;
+    }
+    .btn-main {
+        display: inline-block;
+        padding: 14px 26px;
+        background: #1e3a8a;
+        color: white;
+        border-radius: 12px;
+        font-size: 18px;
+        margin-top: 20px;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    section {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: auto;
+    }
+    h3 {
+        font-size: 26px;
+        color: #1e3a8a;
+        border-left: 6px solid #d4a853;
+        padding-left: 12px;
+        margin-bottom: 30px;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+    }
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 14px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .card h4 {
+        margin: 0 0 10px;
+        font-size: 20px;
+        color: #1e3a8a;
+    }
+
+    .faq-item {
+        background: white;
+        padding: 18px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        cursor: pointer;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    }
+    .faq-item h4 {
+        margin: 0;
+        font-size: 18px;
+        color: #1e3a8a;
+    }
+    .faq-content {
+        display: none;
+        padding-top: 10px;
+        color: #333;
+        font-size: 16px;
+    }
+
+    footer {
+        background: #1e3a8a;
+        color: white;
+        padding: 25px;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    /* 浮動按鈕 */
+    .float-btn {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        background: #06c755;
+        color: white;
+        padding: 12px 16px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        z-index: 9999;
+    }
+    .call-btn {
+        bottom: 70px;
+        background: #1e3a8a;
+    }
+
+</style>
 </head>
+
 <body>
 
-  <!-- NAV / HEADER -->
-  <header class="sticky" aria-label="主導覽列">
-    <div class="wrap topbar" role="banner">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">AB</div>
-        <div>
-          <h1 style="margin:0">安心借貸顧問</h1>
-          <div class="small-muted" style="font-size:0.85rem">合法媒合 · 免費諮詢</div>
-        </div>
-      </div>
-
-      <nav aria-label="主要連結">
-        <ul>
-          <li><a href="#home">首頁</a></li>
-          <li><a href="#services">方案</a></li>
-          <li><a href="#calculator">試算</a></li>
-          <li><a href="#testimonials">見證</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#apply">申請</a></li>
-        </ul>
-      </nav>
+<header>
+    <h1>萬通租賃</h1>
+    <div class="contact">
+        <a href="tel:0901270389">📞 0901-270-389</a>
+        <a href="https://line.me/ti/p/vvv178" target="_blank">💬 LINE</a>
     </div>
+</header>
 
-    <!-- HERO -->
-    <div id="home" class="wrap hero" role="region" aria-label="主視覺">
-      <div>
-        <span class="eyebrow">台灣在地 · 合法媒合</span>
-        <h2>快速審核 · 低利安心 · 手機即可申辦</h2>
-        <p class="lead">免費諮詢、依條件媒合銀行與合法融資機構。專人評估，提供量身還款方案。</p>
-        <div class="hero-cta">
-          <a class="btn" href="#apply">免費諮詢</a>
-          <a class="btn ghost" href="#calculator">貸款試算</a>
-          <a class="btn" href="#rates" style="background:transparent;border:1px solid #f1e7cc;color:var(--primary);font-weight:700">
-            利率參考
-          </a>
+<div class="hero">
+    <h2>快速、安全、保密的專業借貸服務</h2>
+    <p>信用借貸｜房屋借貸｜汽車借貸｜黃金借貸</p>
+    <a href="https://line.me/ti/p/vvv178" target="_blank" class="btn-main">立即 LINE 詢問</a>
+</div>
+
+<section>
+    <h3>服務項目</h3>
+    <div class="card-container">
+        <div class="card">
+            <h4>信用借貸</h4>
+            <p>門檻低、撥款快，薪轉／勞保皆可申請。</p>
         </div>
-
-        <div style="margin-top:18px;color:var(--muted);font-size:0.95rem">
-          LINE：<strong>svip11122</strong> ｜ 電話：<a href="tel:0989087639">0989-087-639</a>
+        <div class="card">
+            <h4>房屋借貸</h4>
+            <p>不限屋齡／坪數，無塵封即可貸。</p>
         </div>
-      </div>
-
-      <aside class="hero-card" aria-hidden="false">
-        <h4 style="margin:0 0 8px 0;color:var(--primary)">快速流程（範例）</h4>
-        <ul class="quick-list" style="margin:0;padding-left:18px">
-          <li>1. 線上填表 → 2. 專人聯繫評估</li>
-          <li>3. 條件媒合 → 4. 金融機構審核</li>
-          <li>5. 核准撥款（依機構規定）</li>
-        </ul>
-        <div style="margin-top:12px" class="small-muted">※ 本公司僅提供媒合與諮詢，不為放款機構，亦不保證核准。</div>
-      </aside>
+        <div class="card">
+            <h4>汽車借貸</h4>
+            <p>汽機車皆可借，不限年份、可免留車。</p>
+        </div>
+        <div class="card">
+            <h4>黃金借貸</h4>
+            <p>依金價估值，手續簡單，現金快速到位。</p>
+        </div>
     </div>
-  </header>
+</section>
 
-  <main class="wrap" role="main">
-    <!-- SERVICES -->
-    <section id="services" aria-labelledby="services-head">
-      <div class="section-head">
-        <h3 id="services-head">服務與方案</h3>
-        <div class="muted">我們提供多元、合法的貸款媒合服務</div>
-      </div>
+<section>
+    <h3>利率與費用說明</h3>
+    <div class="card">
+        <p>1. 還款期限：最低 3 個月，最長 60 個月（以月計算）</p>
+        <p>2. 利率依當舖法規定，年利率不得高於 30%（月利率 1%～2.5%）</p>
+        <p>3. 無任何代辦手續費。</p>
+        <p><b>範例：</b><br>
+        年利率 12% → 月息 1% → 每萬元每月利息 100 元。<br>
+        借款 10 萬元×12 個月，共需清償：112,000 元。</p>
+    </div>
+</section>
 
-      <div class="grid">
-        <div class="card">
-          <h4 style="margin-top:0">信用貸款</h4>
-          <p class="muted">免抵押，依信用與收入評估最合適方案。</p>
+<section>
+    <h3>常見問題（FAQ）</h3>
+    <div class="faq-item">
+        <h4>申請條件是什麼？</h4>
+        <div class="faq-content">
+            年滿 20 歲即可申請，需提供基本身分資料，視貸款項目不同可能需要其他文件。
         </div>
-        <div class="card">
-          <h4 style="margin-top:0">房屋轉貸</h4>
-          <p class="muted">協助降低利率或延展寬限期，提升還款彈性。</p>
+    </div>
+    <div class="faq-item">
+        <h4>多久可以撥款？</h4>
+        <div class="faq-content">
+            審核最快 10 分鐘，資料完整當日即可撥款。
         </div>
-        <div class="card">
-          <h4 style="margin-top:0">汽機車貸</h4>
-          <p class="muted">車齡與條件評估，媒合合適金融方案。</p>
+    </div>
+    <div class="faq-item">
+        <h4>會影響信用嗎？</h4>
+        <div class="faq-content">
+            按時繳款不會影響信用，反而有助信用評等提升。
         </div>
-        <div class="card">
-          <h4 style="margin-top:0">小額週轉</h4>
-          <p class="muted">短期資金需求快速應對方案。</p>
+    </div>
+    <div class="faq-item">
+        <h4>是否收取代辦費？</h4>
+        <div class="faq-content">
+            全程不收任何代辦費、審核費、前期費用，透明公開。
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- RATES -->
-    <section id="rates" aria-labelledby="rates-head">
-      <div class="section-head">
-        <h3 id="rates-head">利率參考（示意）</h3>
-        <div class="muted">實際利率依金融機構審核結果為準</div>
-      </div>
+<footer>
+    萬通租賃｜專業借貸顧問服務<br>
+    本網站提供金融資訊，無代辦費｜保密處理
+</footer>
 
-      <div class="card">
-        <table aria-describedby="rates-head">
-          <thead>
-            <tr><th>方案</th><th>年利率（示意）</th><th>備註</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>信用貸款</td><td>3.5% – 12%</td><td>依信用評分與財力</td></tr>
-            <tr><td>房屋貸款</td><td>1.7% – 3.5%</td><td>依貸款成數與期限</td></tr>
-            <tr><td>汽車貸款</td><td>2.5% – 8%</td><td>依車況與車齡</td></tr>
-            <tr><td>小額週轉</td><td>6% – 18%</td><td>短期資金方案</t
+<!-- 浮動按鈕 -->
+<a class="float-btn" href="https://line.me/ti/p/vvv178" target="_blank">💬 LINE</a>
+<a class="float-btn call-btn" href="tel:0901270389">📞 立即來電</a>
+
+<script>
+    document.querySelectorAll(".faq-item").forEach(item => {
+        item.addEventListener("click", () => {
+            const content = item.querySelector(".faq-content");
+            content.style.display = (content.style.display === "block") ? "none" : "block";
+        });
+    });
+</script>
+
+</body>
+</html>
