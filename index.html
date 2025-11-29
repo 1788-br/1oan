@@ -3,281 +3,301 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>萬通租賃｜專業借貸服務</title>
+<title>萬通租賃｜專業金融諮詢服務</title>
 
 <style>
-    body {
-        font-family: "Noto Sans TC", sans-serif;
-        margin: 0;
-        background: #f4f6f9;
-        color: #1a1a1a;
-        line-height: 1.8;
-    }
 
-    header {
-        background: #1e3a8a;
-        color: white;
-        padding: 15px 20px;
-        text-align: center;
-        position: sticky;
-        top: 0;
-        z-index: 999;
-        font-size: 26px;
-        font-weight: 700;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+/* ----------------------------- */
+/*     全站樣式 — 專業金融風格     */
+/* ----------------------------- */
 
-    /* ------------ HERO 區塊：優化、刪除文字版 ------------ */
-    .hero-wrapper {
-        position: relative;
-        width: 100%;
-        background: #1e3a8a;
-        text-align: center;
-    }
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f6f7fb;
+    color: #1e2a4a;
+    line-height: 1.7;
+}
 
-    .hero-wrapper img.hero-img {
-        width: 100%;
-        height: auto;
-        display: block;
-        object-fit: contain;
-    }
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+}
 
-    /* HERO 按鈕置於圖片下方 */
+/* 統一標題 */
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #1e3a8a;
+}
+
+/* 統一主按鈕 */
+.btn-main {
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #1e3a8a, #4d6bdc);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 14px;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+}
+.btn-main:hover {
+    transform: translateY(-3px);
+    opacity: 0.92;
+}
+
+/* ----------------------------- */
+/*             HERO              */
+/* ----------------------------- */
+
+.hero-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #f6f7fb;
+}
+
+.hero-wrapper img.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; /* 完整顯示圖片 */
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.hero-card {
+    background: rgba(255,255,255,0.85);
+    padding: 18px 35px;
+    border-radius: 18px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+}
+
+/* ----------------------------- */
+/*          四大優勢 ICON        */
+/* ----------------------------- */
+
+.features {
+    padding: 70px 0;
+}
+
+.feature-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: center;
+}
+
+.feature-item {
+    width: 250px;
+    background: #fff;
+    padding: 28px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+.feature-item:hover { transform: translateY(-5px); }
+
+.feature-icon {
+    width: 70px;
+    margin-bottom: 15px;
+}
+
+/* ----------------------------- */
+/*          服務項目區塊          */
+/* ----------------------------- */
+
+.services {
+    padding: 70px 0;
+}
+
+.service-card {
+    background: #fff;
+    padding: 32px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.service-card h3 {
+    color: #1e3a8a;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+/* ----------------------------- */
+/*             表單區             */
+/* ----------------------------- */
+
+.form-section {
+    padding: 70px 0;
+}
+
+.contact-form {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact-form input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccd2e3;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1e3a8a, #4d6bdc);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* ----------------------------- */
+/*             Footer            */
+/* ----------------------------- */
+
+footer {
+    background: #1e3a8a;
+    color: white;
+    padding: 28px 0;
+    text-align: center;
+}
+
+/* ----------------------------- */
+/*             RWD               */
+/* ----------------------------- */
+
+@media (max-width: 768px) {
+
     .hero-content {
-        position: absolute;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        padding: 10px;
+        bottom: 25px;
+    }
+
+    .hero-card {
+        padding: 14px 22px;
     }
 
     .btn-main {
-        display: inline-block;
-        padding: 16px 30px;
-        font-size: 20px;
-        border-radius: 12px;
-        background: linear-gradient(135deg, #1e3a8a, #3f60c1);
-        color: white;
-        text-decoration: none;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        transition: 0.3s;
-    }
-
-    .btn-main:hover {
-        transform: scale(1.05);
-        opacity: 0.9;
-    }
-
-    @media(max-width: 768px) {
-        .btn-main {
-            font-size: 16px;
-            padding: 12px 22px;
-        }
-        .hero-content {
-            bottom: 25px;
-        }
-    }
-
-    /* ------------------- 其他區域保留 ------------------- */
-
-    section {
-        padding: 60px 20px;
-        max-width: 1000px;
-        margin: auto;
-        margin-bottom: 40px;
-    }
-
-    h3 {
-        font-size: 26px;
-        color: #1e3a8a;
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-    .services, .rates, .faq, .about {
-        background: white;
-        border-radius: 16px;
-        padding: 40px 20px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        margin-bottom: 30px;
-    }
-
-    .card-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 20px;
-    }
-
-    .card {
-        background: #f7f9fc;
-        border-radius: 14px;
-        padding: 20px;
-        text-align: center;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        transition: 0.3s;
-    }
-
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-    }
-
-    .card h4 {
-        margin-bottom: 12px;
-        color: #1e3a8a;
-    }
-
-    .faq-item {
-        background: #f7f9fc;
-        border-radius: 12px;
-        padding: 18px;
-        margin-bottom: 16px;
-        cursor: pointer;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-        transition: 0.3s;
-    }
-
-    .faq-item:hover {
-        transform: scale(1.02);
-        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    }
-
-    .faq-content {
-        display: none;
-        padding-top: 10px;
-        color: #333;
-        font-size: 16px;
-    }
-
-    .faq-item.active .faq-content {
-        display: block;
-    }
-
-    footer {
-        background: #1e3a8a;
-        color: white;
-        padding: 25px;
-        text-align: center;
-    }
-
-    .bottom-buttons {
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 15px;
-        z-index: 9999;
-        padding-bottom: env(safe-area-inset-bottom);
-    }
-
-    .bottom-buttons .btn {
-        padding: 14px 25px;
-        border-radius: 12px;
         font-size: 18px;
-        font-weight: 700;
-        color: white;
-        text-decoration: none;
-        box-shadow: 0 6px 15px rgba(0,0,0,0.35);
-        min-width: 150px;
-        text-align: center;
-        transition: 0.3s;
+        padding: 12px 26px;
     }
 
-    .bottom-buttons .line { background: linear-gradient(135deg, #00c300, #00ff70); }
-    .bottom-buttons .call { background: linear-gradient(135deg, #1e3a8a, #3f60c1); }
+    .feature-item {
+        width: 44%;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
-<header>萬通租賃</header>
-
-<!-- HERO：圖片完整顯示 + 已刪除文字 -->
+<!-- HERO 區塊 -->
 <div class="hero-wrapper">
     <img src="hero-bg.jpg" alt="首頁背景" class="hero-img">
 
     <div class="hero-content">
-        <a href="https://line.me/ti/p/vvv178" target="_blank" class="btn-main">
-            立即 LINE 詢問
-        </a>
+        <div class="hero-card">
+            <a href="https://line.me/ti/p/vvv178" target="_blank" class="btn-main">
+                立即 LINE 諮詢
+            </a>
+        </div>
     </div>
 </div>
 
+<!-- 四大優勢 -->
+<section class="features container">
+    <h2 class="section-title">我們的優勢</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-item">
+            <img src="icon-1.png" class="feature-icon">
+            <h3>流程透明</h3>
+            <p>所有流程清楚說明，無任何隱藏費用。</p>
+        </div>
+
+        <div class="feature-item">
+            <img src="icon-2.png" class="feature-icon">
+            <h3>彈性規劃</h3>
+            <p>依需求客製最適合的協助方案。</p>
+        </div>
+
+        <div class="feature-item">
+            <img src="icon-3.png" class="feature-icon">
+            <h3>即時協助</h3>
+            <p>快速處理，提高時間效率。</p>
+        </div>
+
+        <div class="feature-item">
+            <img src="icon-4.png" class="feature-icon">
+            <h3>專業團隊</h3>
+            <p>多年專業經驗，提供穩定可靠的協助。</p>
+        </div>
+
+    </div>
+</section>
+
 <!-- 服務項目 -->
-<section class="services">
-    <h3>服務項目</h3>
-    <div class="card-container">
-        <div class="card"><h4>信用借貸</h4><p>門檻低、撥款快，薪轉／勞保皆可申請。</p></div>
-        <div class="card"><h4>房屋借貸</h4><p>不限屋齡／坪數，無塵封即可貸。</p></div>
-        <div class="card"><h4>汽車借貸</h4><p>汽機車皆可借，不限年份、可免留車。</p></div>
-        <div class="card"><h4>黃金借貸</h4><p>依金價估值，手續簡單，現金快速到位。</p></div>
+<section class="services container">
+    <h2 class="section-title">服務項目</h2>
+
+    <div class="service-card">
+        <h3>彈性資金協助</h3>
+        <p>依需求提供彈性規劃方向，流程清晰透明。</p>
+    </div>
+
+    <div class="service-card">
+        <h3>一對一專業諮詢</h3>
+        <p>專業顧問陪同，提供最適解決方案。</p>
+    </div>
+
+    <div class="service-card">
+        <h3>個人與企業支援</h3>
+        <p>完整流程支援，適用個人與公司需求。</p>
     </div>
 </section>
 
-<!-- 利率說明 -->
-<section class="rates">
-    <h3>利率與費用說明</h3>
-    <div class="card">
-        <p>1. 還款期限：最低 3 個月，最長 60 個月（以月計算）</p>
-        <p>2. 利率依當舖法規定，年利率不得高於 30%（月利率 1%～2.5%）</p>
-        <p>3. 無任何代辦手續費。</p>
-        <p><b>範例：</b><br>年利率 12% → 月息 1% → 每萬元每月利息 100 元。<br>
-        借款 10 萬元×12 個月，共需清償：112,000 元。</p>
-    </div>
-</section>
+<!-- 表單 -->
+<section class="form-section container">
+    <h2 class="section-title">免費諮詢</h2>
 
-<!-- FAQ -->
-<section class="faq">
-    <h3>常見問題（FAQ）</h3>
-
-    <div class="faq-item">
-        <h4>申請條件是什麼？</h4>
-        <div class="faq-content">年滿 20 歲即可申請，需提供基本身分資料。</div>
-    </div>
-
-    <div class="faq-item">
-        <h4>多久可以撥款？</h4>
-        <div class="faq-content">審核最快 10 分鐘，資料完整當日即可撥款。</div>
-    </div>
-
-    <div class="faq-item">
-        <h4>會影響信用嗎？</h4>
-        <div class="faq-content">按時繳款不會影響信用，反而有助信用提升。</div>
-    </div>
-
-    <div class="faq-item">
-        <h4>是否收取代辦費？</h4>
-        <div class="faq-content">全程不收任何代辦費、審核費、前期費用。</div>
-    </div>
-</section>
-
-<!-- 關於我們 -->
-<section class="about">
-    <h3>關於我們</h3>
-    <p>公司名稱：萬通租賃有限公司</p>
-    <p>公司地址：嘉義縣六腳鄉蘇厝村蘇厝寮150-5號1樓</p>
-    <p>服務專線：<a href="tel:09123456789">0912-345-6789</a></p>
-    <p>LINE 聯絡：<a href="https://line.me/ti/p/vvv178" target="_blank">立即聯絡</a></p>
+    <form class="contact-form">
+        <input type="text" placeholder="您的姓名" required>
+        <input type="tel" placeholder="聯絡電話" required>
+        <input type="text" placeholder="您的需求（可選填）">
+        <button type="submit">送出表單</button>
+    </form>
 </section>
 
 <footer>
-    萬通租賃｜專業借貸顧問服務<br>本網站提供金融資訊，無代辦費｜保密處理
+    © 2025 萬通租賃｜提供專業資訊與協助服務
 </footer>
-
-<div class="bottom-buttons">
-    <a class="btn line" href="https://line.me/ti/p/vvv178" target="_blank">💬 LINE 聯絡</a>
-    <a class="btn call" href="tel:09123456789">📞 立即來電</a>
-</div>
-
-<script>
-    document.querySelectorAll(".faq-item").forEach(item => {
-        item.addEventListener("click", () => {
-            item.classList.toggle("active");
-        });
-    });
-</script>
 
 </body>
 </html>
