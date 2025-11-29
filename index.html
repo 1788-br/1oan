@@ -122,48 +122,51 @@
         margin-top: 40px;
     }
 
-    /* 浮動圓形按鈕 */
-    .float-btn {
+    /* 底部長方形浮動按鈕 */
+    .bottom-buttons {
         position: fixed;
-        right: 20px;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 15px;
+        z-index: 9999;
+    }
+
+    .bottom-buttons .btn {
         display: flex;
         align-items: center;
         justify-content: center;
-        text-decoration: none;
+        padding: 14px 25px;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: 700;
         color: white;
-        z-index: 9999;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+        text-decoration: none;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.35);
         transition: all 0.3s ease;
     }
 
-    .float-btn.line {
-        bottom: 20px;
+    .bottom-buttons .btn.line {
         background: linear-gradient(135deg, #00c300, #00ff70);
     }
 
-    .float-btn.call {
-        bottom: 90px;
+    .bottom-buttons .btn.call {
         background: linear-gradient(135deg, #1e3a8a, #3f60c1);
     }
 
-    .float-btn:hover {
-        transform: scale(1.15) rotate(-5deg);
-        box-shadow: 0 12px 25px rgba(0,0,0,0.45);
+    .bottom-buttons .btn:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
     }
 
-    @media(max-width: 600px){
-        .float-btn {
-            width: 50px;
-            height: 50px;
-        }
-        .float-btn.call {
-            bottom: 80px;
-        }
-        .float-btn.line {
+    @media(max-width: 500px) {
+        .bottom-buttons {
+            flex-direction: column;
             bottom: 15px;
+        }
+        .bottom-buttons .btn {
+            width: 200px;
         }
     }
 </style>
@@ -252,13 +255,11 @@
     本網站提供金融資訊，無代辦費｜保密處理
 </footer>
 
-<!-- 浮動圓形按鈕 -->
-<a class="float-btn line" href="https://line.me/ti/p/vvv178" target="_blank" title="LINE 聯絡">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/LINE_logo.svg" alt="LINE" style="width:28px; height:28px;">
-</a>
-<a class="float-btn call" href="tel:0901270389" title="撥打電話">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Phone_font_awesome.svg" alt="電話" style="width:28px; height:28px;">
-</a>
+<!-- 底部長方形浮動按鈕 -->
+<div class="bottom-buttons">
+    <a class="btn line" href="https://line.me/ti/p/vvv178" target="_blank">💬 LINE 聯絡</a>
+    <a class="btn call" href="tel:0901270389">📞 立即來電</a>
+</div>
 
 <script>
     // FAQ 展開/收合
