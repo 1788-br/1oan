@@ -23,7 +23,7 @@
         top: 0;
         z-index: 999;
         display: flex;
-        justify-content: space-between;
+        justify-content: center; /* 居中顯示 */
         align-items: center;
     }
     header h1 {
@@ -31,12 +31,6 @@
         font-size: 26px;
         color: #1e3a8a;
         font-weight: 700;
-    }
-    header .contact a {
-        margin-left: 20px;
-        text-decoration: none;
-        color: #1e3a8a;
-        font-weight: 600;
     }
 
     .hero {
@@ -123,7 +117,7 @@
         margin-top: 40px;
     }
 
-    /* 底部長方形浮動按鈕 - 水平排列 */
+    /* 底部長方形浮動按鈕 - 水平排列 + 動畫 */
     .bottom-buttons {
         position: fixed;
         bottom: 20px;
@@ -132,6 +126,11 @@
         display: flex;
         gap: 15px;
         z-index: 9999;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .bottom-buttons.hide {
+        transform: translateX(-50%) translateY(100%);
+        opacity: 0;
     }
     .bottom-buttons .btn {
         display: flex;
@@ -162,24 +161,14 @@
     /* 手機版 header 與浮動按鈕調整 */
     @media(max-width: 500px) {
         header {
-            flex-direction: column; /* 標題與聯絡方式垂直排列 */
-            align-items: flex-start;
             padding: 15px 20px;
         }
-        header .contact {
-            margin-top: 10px;
-        }
-        header .contact a {
-            margin-left: 0;
-            margin-right: 15px;
-            font-size: 16px;
-        }
         .bottom-buttons {
-            flex-direction: row; /* 保持水平排列 */
+            flex-direction: row;
             bottom: 15px;
         }
         .bottom-buttons .btn {
-            width: 140px; /* 手機版按鈕稍小 */
+            width: 140px;
         }
     }
 </style>
@@ -189,10 +178,6 @@
 
 <header>
     <h1>萬通租賃</h1>
-    <div class="contact">
-        <a href="tel:0901270389">📞 0901-270-389</a>
-        <a href="https://line.me/ti/p/vvv178" target="_blank">💬 LINE</a>
-    </div>
 </header>
 
 <div class="hero">
@@ -268,8 +253,8 @@
     本網站提供金融資訊，無代辦費｜保密處理
 </footer>
 
-<!-- 底部長方形浮動按鈕（水平排列） -->
-<div class="bottom-buttons">
+<!-- 底部長方形浮動按鈕（水平排列 + 滑動動畫） -->
+<div class="bottom-buttons" id="bottomButtons">
     <a class="btn line" href="https://line.me/ti/p/vvv178" target="_blank">💬 LINE 聯絡</a>
     <a class="btn call" href="tel:0901270389">📞 立即來電</a>
 </div>
@@ -281,6 +266,19 @@
             const content = item.querySelector(".faq-content");
             content.style.display = (content.style.display === "block") ? "none" : "block";
         });
+    });
+
+    // 滑動隱藏/顯示底部按鈕
+    let lastScroll = 0;
+    const bottomButtons = document.getElementById('bottomButtons');
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if(currentScroll > lastScroll){
+            bottomButtons.classList.add('hide');
+        } else {
+            bottomButtons.classList.remove('hide');
+        }
+        lastScroll = currentScroll <= 0 ? 0 : currentScroll;
     });
 </script>
 
