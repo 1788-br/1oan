@@ -3,214 +3,271 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>台灣專業貸款顧問｜快速審核・低利安心借貸</title>
-<meta name="description" content="台灣專業借貸顧問，快速審核，低利率，當日可撥款，手機即可申辦，歡迎加LINE：svip11122 或來電 0989087639">
+<title>萬通租賃｜專業借貸服務</title>
 
 <style>
-body{
-  margin:0;
-  font-family: "Noto Sans TC", Arial, sans-serif;
-  background:#f8fafc;
-  color:#1f2937;
-}
-header{
-  background:linear-gradient(135deg,#1e3a8a,#2563eb);
-  color:white;
-  text-align:center;
-  padding:60px 20px;
-}
-header h1{margin:0;font-size:2.2rem;}
-header p{margin-top:10px;font-size:1.2rem;}
+    body {
+        font-family: "Noto Sans TC", sans-serif;
+        margin: 0;
+        background: #f7f9fc;
+        color: #1a1a1a;
+        line-height: 1.8;
+    }
 
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:14px 28px;
-  background:#06c755;
-  color:#white;
-  color:#fff;
-  text-decoration:none;
-  border-radius:999px;
-  font-weight:bold;
-}
+    header {
+        background: white;
+        padding: 20px 40px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 26px;
+        color: #1e3a8a;
+        font-weight: 700;
+    }
+    header .contact a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #1e3a8a;
+        font-weight: 600;
+    }
 
-section{
-  padding:50px 20px;
-  max-width:900px;
-  margin:auto;
-}
+    .hero {
+        padding: 80px 20px;
+        text-align: center;
+        background: linear-gradient(to bottom right, #ffffff, #e7edf9);
+    }
+    .hero h2 {
+        font-size: 32px;
+        color: #1e3a8a;
+        font-weight: 700;
+    }
+    .hero p {
+        font-size: 18px;
+        color: #555;
+    }
+    .btn-main {
+        display: inline-block;
+        padding: 14px 26px;
+        background: #1e3a8a;
+        color: white;
+        border-radius: 12px;
+        font-size: 18px;
+        margin-top: 20px;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
-.features{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-.feature{
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.08);
-}
+    section {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: auto;
+    }
+    h3 {
+        font-size: 26px;
+        color: #1e3a8a;
+        border-left: 6px solid #d4a853;
+        padding-left: 12px;
+        margin-bottom: 30px;
+    }
 
-form{
-  background:white;
-  padding:30px;
-  border-radius:12px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.08);
-}
-form input, form select, form button{
-  width:100%;
-  padding:14px;
-  margin-bottom:15px;
-  border:1px solid #ccc;
-  border-radius:8px;
-  font-size:1rem;
-}
-form button{
-  background:#1e40af;
-  color:white;
-  border:none;
-  font-weight:bold;
-  cursor:pointer;
-}
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+    }
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 14px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .card h4 {
+        margin: 0 0 10px;
+        font-size: 20px;
+        color: #1e3a8a;
+    }
 
-footer{
-  text-align:center;
-  padding:30px 15px;
-  background:#1f2937;
-  color:white;
-  font-size:0.95rem;
-}
+    .faq-item {
+        background: white;
+        padding: 18px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        cursor: pointer;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    }
+    .faq-item h4 {
+        margin: 0;
+        font-size: 18px;
+        color: #1e3a8a;
+    }
+    .faq-content {
+        display: none;
+        padding-top: 10px;
+        color: #333;
+        font-size: 16px;
+    }
 
-/* LINE 浮動按鈕 */
-.line-float{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  background:#06c755;
-  color:#fff;
-  padding:12px 16px;
-  border-radius:999px;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 8px 20px rgba(0,0,0,0.25);
-  z-index:9999;
-}
+    footer {
+        background: #1e3a8a;
+        color: white;
+        padding: 25px;
+        text-align: center;
+        margin-top: 40px;
+    }
 
-.call-float{
-  position:fixed;
-  right:20px;
-  bottom:80px;
-  background:#1e40af;
-  color:#fff;
-  padding:14px 18px;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 8px 20px rgba(0,0,0,0.2);
-  z-index:9999;
-}
+    /* 浮動圓形按鈕 */
+    .float-btn {
+        position: fixed;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        z-index: 9999;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+        transition: all 0.3s ease;
+    }
 
-/* 手機底部列 */
-.mobile-bar{
-  display:none;
-}
-@media (max-width:768px){
-  .mobile-bar{
-    display:flex;
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    background:#fff;
-    border-top:1px solid #e5e7eb;
-    z-index:9999;
-  }
-  .mobile-bar a{
-    flex:1;
-    text-align:center;
-    padding:14px 0;
-    text-decoration:none;
-    font-weight:bold;
-  }
-  .mobile-bar a:first-child{background:#1e40af;color:white;}
-  .mobile-bar a:last-child{background:#06c755;color:white;}
-}
+    .float-btn.line {
+        bottom: 20px;
+        background: linear-gradient(135deg, #00c300, #00ff70);
+    }
+
+    .float-btn.call {
+        bottom: 90px;
+        background: linear-gradient(135deg, #1e3a8a, #3f60c1);
+    }
+
+    .float-btn:hover {
+        transform: scale(1.15) rotate(-5deg);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.45);
+    }
+
+    @media(max-width: 600px){
+        .float-btn {
+            width: 50px;
+            height: 50px;
+        }
+        .float-btn.call {
+            bottom: 80px;
+        }
+        .float-btn.line {
+            bottom: 15px;
+        }
+    }
 </style>
 </head>
+
 <body>
 
 <header>
-  <h1>台灣專業貸款顧問</h1>
-  <p>快速審核｜低利安心｜手機申辦｜當日可撥款</p>
-  <a href="https://line.me/ti/p/svip11122" target="_blank" class="btn">加入 LINE 免費諮詢</a>
+    <h1>萬通租賃</h1>
+    <div class="contact">
+        <a href="tel:0901270389">📞 0901-270-389</a>
+        <a href="https://line.me/ti/p/vvv178" target="_blank">💬 LINE</a>
+    </div>
 </header>
 
+<div class="hero">
+    <h2>快速、安全、保密的專業借貸服務</h2>
+    <p>信用借貸｜房屋借貸｜汽車借貸｜黃金借貸</p>
+    <a href="https://line.me/ti/p/vvv178" target="_blank" class="btn-main">立即 LINE 詢問</a>
+</div>
+
 <section>
-  <h2>我們的優勢</h2>
-  <div class="features">
-    <div class="feature">✅ 低利專案，量身訂做還款方案</div>
-    <div class="feature">✅ 無需聯徵過件率高</div>
-    <div class="feature">✅ 當日最快核准放款</div>
-    <div class="feature">✅ 全台皆可服務</div>
-  </div>
+    <h3>服務項目</h3>
+    <div class="card-container">
+        <div class="card">
+            <h4>信用借貸</h4>
+            <p>門檻低、撥款快，薪轉／勞保皆可申請。</p>
+        </div>
+        <div class="card">
+            <h4>房屋借貸</h4>
+            <p>不限屋齡／坪數，無塵封即可貸。</p>
+        </div>
+        <div class="card">
+            <h4>汽車借貸</h4>
+            <p>汽機車皆可借，不限年份、可免留車。</p>
+        </div>
+        <div class="card">
+            <h4>黃金借貸</h4>
+            <p>依金價估值，手續簡單，現金快速到位。</p>
+        </div>
+    </div>
 </section>
 
 <section>
-  <h2>立即申請貸款</h2>
-  <form onsubmit="sendToLINE()" id="loanForm">
-    <input type="text" id="name" placeholder="姓名" required>
-    <input type="tel" id="phone" placeholder="聯絡電話" required>
-    <select id="type">
-      <option>個人信用貸款</option>
-      <option>汽車貸款</option>
-      <option>機車貸款</option>
-      <option>小額週轉金</option>
-    </select>
-    <input type="number" id="amount" placeholder="需求金額 (例如 10萬)">
-    <button type="submit">送出諮詢</button>
-  </form>
+    <h3>利率與費用說明</h3>
+    <div class="card">
+        <p>1. 還款期限：最低 3 個月，最長 60 個月（以月計算）</p>
+        <p>2. 利率依當舖法規定，年利率不得高於 30%（月利率 1%～2.5%）</p>
+        <p>3. 無任何代辦手續費。</p>
+        <p><b>範例：</b><br>
+        年利率 12% → 月息 1% → 每萬元每月利息 100 元。<br>
+        借款 10 萬元×12 個月，共需清償：112,000 元。</p>
+    </div>
+</section>
+
+<section>
+    <h3>常見問題（FAQ）</h3>
+    <div class="faq-item">
+        <h4>申請條件是什麼？</h4>
+        <div class="faq-content">
+            年滿 20 歲即可申請，需提供基本身分資料，視貸款項目不同可能需要其他文件。
+        </div>
+    </div>
+    <div class="faq-item">
+        <h4>多久可以撥款？</h4>
+        <div class="faq-content">
+            審核最快 10 分鐘，資料完整當日即可撥款。
+        </div>
+    </div>
+    <div class="faq-item">
+        <h4>會影響信用嗎？</h4>
+        <div class="faq-content">
+            按時繳款不會影響信用，反而有助信用評等提升。
+        </div>
+    </div>
+    <div class="faq-item">
+        <h4>是否收取代辦費？</h4>
+        <div class="faq-content">
+            全程不收任何代辦費、審核費、前期費用，透明公開。
+        </div>
+    </div>
 </section>
 
 <footer>
-  安心借貸顧問諮詢<br>
-  聯絡電話：0989-087-639 ｜ LINE ID：svip11122<br>
-  服務時間：週一至週五 09:00 - 18:00<br><br>
-  本網站僅提供資訊與媒合，不構成實際放款保證
+    萬通租賃｜專業借貸顧問服務<br>
+    本網站提供金融資訊，無代辦費｜保密處理
 </footer>
 
-<!-- LINE 浮動按鈕 -->
-<a href="https://line.me/ti/p/svip11122" target="_blank" class="line-float">
-  💬 LINE 諮詢
+<!-- 浮動圓形按鈕 -->
+<a class="float-btn line" href="https://line.me/ti/p/vvv178" target="_blank" title="LINE 聯絡">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/LINE_logo.svg" alt="LINE" style="width:28px; height:28px;">
 </a>
-
-<!-- 電話浮動按鈕 -->
-<a href="tel:0989087639" class="call-float">
-  📞 立即來電
+<a class="float-btn call" href="tel:0901270389" title="撥打電話">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Phone_font_awesome.svg" alt="電話" style="width:28px; height:28px;">
 </a>
-
-<!-- 手機底部 -->
-<div class="mobile-bar">
-  <a href="tel:0989087639">📞 立即來電</a>
-  <a href="https://line.me/ti/p/svip11122" target="_blank">💬 LINE 諮詢</a>
-</div>
 
 <script>
-function sendToLINE(){
-  event.preventDefault();
-
-  let name = document.getElementById("name").value;
-  let phone = document.getElementById("phone").value;
-  let type = document.getElementById("type").value;
-  let amount = document.getElementById("amount").value;
-
-  let msg = `您好，我想申請貸款：%0A姓名：${name}%0A電話：${phone}%0A類型：${type}%0A金額：${amount}`;
-
-  window.open(`https://line.me/ti/p/svip11122?text=${msg}`, "_blank");
-}
+    // FAQ 展開/收合
+    document.querySelectorAll(".faq-item").forEach(item => {
+        item.addEventListener("click", () => {
+            const content = item.querySelector(".faq-content");
+            content.style.display = (content.style.display === "block") ? "none" : "block";
+        });
+    });
 </script>
 
 </body>
