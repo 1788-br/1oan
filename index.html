@@ -12,19 +12,18 @@
         background: #f7f9fc;
         color: #1a1a1a;
         line-height: 1.8;
-        overflow-x: hidden;
     }
 
     /* Header */
     header {
         background: white;
-        padding: 15px 20px;
+        padding: 20px 40px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         position: sticky;
         top: 0;
         z-index: 999;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
     }
     header h1 {
@@ -32,71 +31,6 @@
         font-size: 26px;
         color: #1e3a8a;
         font-weight: 700;
-    }
-
-    /* 漢堡選單 */
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 28px;
-        height: 20px;
-        cursor: pointer;
-    }
-    .menu-toggle span {
-        display: block;
-        height: 3px;
-        background: #1e3a8a;
-        border-radius: 2px;
-    }
-
-    /* 右側選單 */
-    nav {
-        position: fixed;
-        top: 0;
-        right: -250px;
-        width: 250px;
-        height: 100%;
-        background: #1e3a8a;
-        color: white;
-        padding: 60px 20px;
-        transition: right 0.3s ease;
-        z-index: 1001;
-    }
-    nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    nav ul li {
-        margin-bottom: 20px;
-    }
-    nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 20px;
-        display: block;
-    }
-    nav.show {
-        right: 0;
-    }
-
-    /* 遮罩 */
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.4);
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease;
-        z-index: 1000;
-    }
-    .overlay.show {
-        opacity: 1;
-        visibility: visible;
     }
 
     /* Hero */
@@ -113,6 +47,17 @@
     .hero p {
         font-size: 18px;
         color: #555;
+    }
+    .btn-main {
+        display: inline-block;
+        padding: 14px 26px;
+        background: #1e3a8a;
+        color: white;
+        border-radius: 12px;
+        font-size: 18px;
+        margin-top: 20px;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     section {
@@ -165,6 +110,25 @@
         font-size: 16px;
     }
 
+    /* 聯繫我們區塊 */
+    .contact-section {
+        background: #ffffff;
+        padding: 40px 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .contact-section p {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    .contact-section a {
+        color: #1e3a8a;
+        text-decoration: none;
+        font-weight: 700;
+    }
+
     footer {
         background: #1e3a8a;
         color: white;
@@ -214,10 +178,17 @@
         opacity: 0.9;
     }
 
-    /* 手機版調整 */
-    @media(max-width: 768px) {
-        .menu-toggle {
-            display: flex;
+    /* 手機版 header 與浮動按鈕調整 */
+    @media(max-width: 500px) {
+        header {
+            padding: 15px 20px;
+        }
+        .bottom-buttons {
+            flex-direction: row;
+            bottom: 15px;
+        }
+        .bottom-buttons .btn {
+            width: 140px;
         }
     }
 </style>
@@ -227,33 +198,15 @@
 
 <header>
     <h1>萬通租賃</h1>
-    <div class="menu-toggle" id="menuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
 </header>
-
-<!-- 遮罩 -->
-<div class="overlay" id="overlay"></div>
-
-<!-- 右側選單 -->
-<nav id="sideMenu">
-    <ul>
-        <li><a href="#service">信用借貸</a></li>
-        <li><a href="#service">房屋借貸</a></li>
-        <li><a href="#service">汽車借貸</a></li>
-        <li><a href="#service">黃金借貸</a></li>
-        <li><a href="#contact">聯繫我們</a></li>
-    </ul>
-</nav>
 
 <div class="hero">
     <h2>快速、安全、保密的專業借貸服務</h2>
     <p>信用借貸｜房屋借貸｜汽車借貸｜黃金借貸</p>
+    <a href="https://line.me/ti/p/vvv178" target="_blank" class="btn-main">立即 LINE 詢問</a>
 </div>
 
-<section id="service">
+<section>
     <h3>服務項目</h3>
     <div class="card-container">
         <div class="card">
@@ -315,9 +268,10 @@
     </div>
 </section>
 
-<section id="contact">
+<!-- 新增聯繫我們區塊 -->
+<section class="contact-section" id="contact">
     <h3>聯繫我們</h3>
-    <p>📞 電話: 0901-270-389</p>
+    <p>📞 電話: <a href="tel:0901270389">0901-270-389</a></p>
     <p>💬 LINE: <a href="https://line.me/ti/p/vvv178" target="_blank">立即聯絡</a></p>
 </section>
 
@@ -338,21 +292,6 @@
             const content = item.querySelector(".faq-content");
             content.style.display = (content.style.display === "block") ? "none" : "block";
         });
-    });
-
-    // 漢堡選單切換
-    const menuToggle = document.getElementById('menuToggle');
-    const sideMenu = document.getElementById('sideMenu');
-    const overlay = document.getElementById('overlay');
-
-    menuToggle.addEventListener('click', () => {
-        sideMenu.classList.toggle('show');
-        overlay.classList.toggle('show');
-    });
-
-    overlay.addEventListener('click', () => {
-        sideMenu.classList.remove('show');
-        overlay.classList.remove('show');
     });
 
     // 滑動隱藏/顯示底部按鈕
